@@ -13,7 +13,7 @@ pipeline {
                     app.inside {
                         sh 'echo "Tests passed"'
                     }
-                    docker.withRegistry('https://registry.hub.docker.com', 'git') { 
+                    docker.withRegistry('https://registry.hub.docker.com', $DOCKER_CREDENTIALS) { 
                         app.push("${env.BUILD_NUMBER}") 
                         app.push("latest")
                     }
