@@ -1,4 +1,4 @@
-node {    
+node("nuxbuilder") {    
     def app     
     stage('Clone repository') {                        
         checkout scm    
