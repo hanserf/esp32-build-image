@@ -1,4 +1,8 @@
-node("nuxbuilder") {    
+pipeline {
+    /* insert Declarative Pipeline here */
+    agent {
+        label 'nuxbuilder'
+    }
     def app     
     stage('Clone repository') {                        
         checkout scm    
