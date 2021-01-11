@@ -16,7 +16,7 @@ node('nuxbuilder') {
         }
     }
     stage('Push Image')
-        docker.withRegistry('https://registry.hub.docker.com', "${env.DOCKER_CREDENTIALS}") { 
+        docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB_HANSERF') { 
             app.push("${env.BUILD_NUMBER}") 
             app.push("latest")
         }
